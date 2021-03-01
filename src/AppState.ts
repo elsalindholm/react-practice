@@ -5,5 +5,6 @@ export class AppState {
 
   @action incCount() {
     this.count++;
+    console.log('my count now is', this.count);
   }
 }
