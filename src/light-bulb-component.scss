@@ -1,0 +1,26 @@
+.light-bulb {
+  height: 70px;
+  width: 70px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: grey;
+
+  &.switched-on {
+    
+    &.red {
+      background-color: red;
+    }
+
+    &.yellow {
+      background-color: yellow;
+    }
+
+    &.blue {
+      background-color: blue;
+    }
+
+    &.green {
+      background-color: green;
+    }
+  }
+}

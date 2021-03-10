@@ -1,7 +1,8 @@
 import { observer } from 'mobx-react';
 import React from 'react';
 import { AppState } from './AppState';
-import { InputComponent } from './InputComponent';
+import { LightBulb } from './LightBulbComponent';
+import { SwitchComponent } from './SwitchComponent';
 
 @observer
 export class App extends React.PureComponent {
@@ -9,11 +10,17 @@ export class App extends React.PureComponent {
   public render() {
     return (
       <div className={"container"}>
-        <div className={"top-bar"}>
-          <InputComponent appState={this.appState} />
+        <div className={"light-container"}>
+          <LightBulb on={this.appState.redOn} className={"red"} />
+          <LightBulb on={this.appState.yellowOn} className={"yellow"}/>
+          <LightBulb on={this.appState.blueOn} className={"blue"}/>
+          <LightBulb on={this.appState.greenOn} className={"green"}/>
         </div>
-        <div className={"list-box"}>
-
+        <div className={"button-container"}>
+          <SwitchComponent onClick={() => this.appState.lightBulbSwitchRed()} />
+          <SwitchComponent onClick={() => this.appState.lightBulbSwitchYellow()} />
+          <SwitchComponent onClick={() => this.appState.lightBulbSwitchBlue()} />
+          <SwitchComponent onClick={() => this.appState.lightBulbSwitchGreen()} />
         </div>
       </div>
     );
