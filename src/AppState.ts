@@ -1,24 +1,23 @@
 import { action, observable } from 'mobx';
 
+
+export interface Light {
+  id: string;
+  className: string;
+}
+
 export class AppState {
-  @observable public redOn = false;
-  @observable public yellowOn = false;
-  @observable public blueOn = false;
-  @observable public greenOn = false;
+  @observable public lights: Light[] = [];
 
-  @action public lightBulbSwitchRed(){
-    this.redOn = !this.redOn;
+  @action public addLight(className: string) {
+    const light: Light = {
+      id: `${this.lights.length}`,
+      className,
+    };
+    this.lights.push(light);
   }
 
-  @action public lightBulbSwitchYellow(){
-    this.yellowOn = !this.yellowOn;
-  }
-
-  @action public lightBulbSwitchBlue(){
-    this.blueOn = !this.blueOn;
-  }
-
-  @action public lightBulbSwitchGreen(){
-    this.greenOn = !this.greenOn;
-  }
+  @action public removeLight(id: string) {
+    this.lights = this.lights.filter((light) => light.id !== id);
+    }
 }

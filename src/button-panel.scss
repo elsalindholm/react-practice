@@ -1,0 +1,16 @@
+.button-panel {
+  height: 100%;
+  width: 35%;
+
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.new-light-button {
+  background-color: grey;
+  color: antiquewhite;
+}
