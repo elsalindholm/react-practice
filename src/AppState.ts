@@ -24,7 +24,7 @@ export class AppState {
     this.inputText = "";
   }
 
-  @action public deleteToDoItem() {
-    
+  @action public deleteToDoItem(id: string) {
+    this.toDoItems = this.toDoItems.filter((toDoItem) => toDoItem.id !== id);
   }
 }

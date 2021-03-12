@@ -27,7 +27,7 @@ export class App extends React.PureComponent {
 
     this.appState.toDoItems.forEach((item) => {
       items.push(
-        <ToDoItemComp toDoItem={item} />
+        <ToDoItemComp toDoItem={item} appState={this.appState} />
       );
     });
 
