@@ -2,6 +2,7 @@ import { observer } from 'mobx-react';
 import React from 'react';
 import { AppState } from './AppState';
 import { InputComponent } from './InputComponent';
+import { ListItem } from './ListItem';
 
 @observer
 export class App extends React.PureComponent {
@@ -13,7 +14,7 @@ export class App extends React.PureComponent {
           <InputComponent appState={this.appState} />
         </div>
         <div className={"list-box"}>
-
+          <ListItem />
         </div>
       </div>
     );
