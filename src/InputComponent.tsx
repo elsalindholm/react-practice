@@ -18,7 +18,7 @@ export class InputComponent extends React.PureComponent<InputProps> {
         <input placeholder={'write here'} value={appState.inputText} 
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => appState.setInputText(event.target.value)} />
       
-        <button> Add +</button>
+        <button onClick={() => appState.addToDoItem()}> Add +</button>
     </div>
     );
   }

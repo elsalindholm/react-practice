@@ -2,11 +2,13 @@ import { observer } from 'mobx-react';
 import React from 'react';
 import { AppState } from './AppState';
 import { InputComponent } from './InputComponent';
-import { ListItem } from './ListItem';
+import { ToDoItemComp } from './ToDoItem';
 
 @observer
 export class App extends React.PureComponent {
+  
   private readonly appState = new AppState();
+  
   public render() {
     return (
       <div className={"container"}>
@@ -14,9 +16,22 @@ export class App extends React.PureComponent {
           <InputComponent appState={this.appState} />
         </div>
         <div className={"list-box"}>
-          <ListItem />
+          {this.renderToDoItems()}
         </div>
       </div>
     );
   }
+
+  private renderToDoItems() {
+    const items: JSX.Element[] = [];
+
+    this.appState.toDoItems.forEach((item) => {
+      items.push(
+        <ToDoItemComp toDoItem={item} />
+      );
+    });
+
+    return items;
+  }
+
 }
