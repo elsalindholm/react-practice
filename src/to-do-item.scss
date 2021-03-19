@@ -1,18 +1,51 @@
-.to-do-item-container {
-  height: 35px;
-  width: 80%;
-  padding: 5px;
+@import './app-variables.scss';
 
-  border: 1px solid purple;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.to-do-item-container {
+  height: 45px;
+  width: 100%;
+  padding: 10px;
+
+  border: 1px solid $color-border;
+  background-color: $color-list-item-background;
 
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  
+
+  &.completed {
+    background-color: lightgray;
+    opacity: 0.7;
+  }
 }
 
-.to-do-item-text {
-  width: 85%;
+.to-do-item-text-box {
+  width: 200px;
+  font-size: medium;
+  color: white;
+  text-overflow: ellipsis;
+
+  display: inline-block;
+
+  &.completed {
+    color: grey;
+  }
+}
+
+
+.check-box {
+  height: 20px;
+  width: 20px;
 }
 
 .delete-item-button {
   width: 15%;
 }
+

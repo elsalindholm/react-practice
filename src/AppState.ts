@@ -4,6 +4,7 @@ import { action, observable } from 'mobx';
 export interface ToDoItem {
   id: string;
   content: string;
+  completed: boolean; //i.e. is the task still to do or completed
 }
 
 export class AppState {
@@ -16,13 +17,15 @@ export class AppState {
   }
 
   @action public addToDoItem() {
-    const newItem: ToDoItem = {
+    
+      const newItem: ToDoItem = {
       id: this.toDoItems.length.toString(),
       content: this.inputText,
-    };
-    this.toDoItems.push(newItem);
-    this.inputText = "";
-  }
+      completed: false,
+      }
+      this.toDoItems.push(newItem);
+      this.inputText = "";
+    } 
 
   @action public deleteToDoItem(id: string) {
     this.toDoItems = this.toDoItems.filter((toDoItem) => toDoItem.id !== id);

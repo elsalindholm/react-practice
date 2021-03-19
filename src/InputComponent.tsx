@@ -15,10 +15,10 @@ export class InputComponent extends React.PureComponent<InputProps> {
     return (
     <div className={'input-component'}>
       
-        <input placeholder={'write here'} value={appState.inputText} 
+        <input className={'input-field'} placeholder={'write here'} value={appState.inputText} 
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => appState.setInputText(event.target.value)} />
       
-        <button onClick={() => appState.addToDoItem()}> Add +</button>
+        <button className={'add-item-button'} onClick={() => appState.addToDoItem()} disabled={appState.inputText === ""} > Add +</button>
     </div>
     );
   }

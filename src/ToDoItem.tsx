@@ -14,9 +14,17 @@ export interface ToDoItemProps {
 @observer export class ToDoItemComp extends React.PureComponent<ToDoItemProps> {
 
   public render() {
-    return (<div className={'to-do-item-container'}>
-      <p className={"to-do-item-text"}>{this.props.toDoItem.content}</p>
+    const completeClass = this.props.toDoItem.completed ? "completed" : "";
+    
+    return (<div className={'to-do-item-container ' + completeClass}>
+      <div className={'to-do-item-text-box'}>
+        {this.props.toDoItem.content}
+      </div>
+
+      <input type="checkbox" id={"completed"} checked={this.props.toDoItem.completed} className={"check-box"} onChange={() => this.props.toDoItem.completed = !this.props.toDoItem.completed} ></input>
+
       <button className={"delete-item-button"} onClick={() => this.props.appState.deleteToDoItem(this.props.toDoItem.id)}>Delete</button>
+      
       </div>
     )};
 }
