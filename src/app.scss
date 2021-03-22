@@ -1,39 +1,53 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-#app-root {
+.header-container {
   width: 100vw;
-  height: 100vh;
+  height: 10vh;
+
+  border: 1px solid green;
+}
+
+body {
+  width: 100vw;
+  height: 200wh;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+}
+
+.image-banner {
+  height: 65vh;
+  width: 70vw;
+
+  border: 1px solid red;
+}
+
+.brand-blurb {
+  height: 45vh;
+  width: 70vw;
+
+  border: 1px solid pink;
+}
+
+.new-arrivals {
+  height: 65vh;
+  width: 70vw;
+
+  border: 1px solid orange;
+}
 
 
-  .container {
-    width: 30%;
-    height: 80%;
-    border: 1px solid black;
-    padding: 20px;
+footer {
+  height: 20vh;
+  width: 100vw;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .top-bar {
-      width: 100%;
-      flex: 0 0 60px;
-      border: 1px solid red;
-      margin-bottom: 10px;
-    }
-
-    .list-box {
-      width: 100%;
-      flex: 1 1 auto;
-      border: 1px solid purple;
-    }
-  }
+  border: 1px solid red;
 }
