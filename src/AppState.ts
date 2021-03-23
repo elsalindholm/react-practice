@@ -1,6 +1,7 @@
 import { action, observable } from 'mobx';
+import './shop-page.scss';
 
-enum Page {
+export enum Page {
   HOME = "home",
   SHOP = "shop",
   GALLERY = "gallery",
@@ -9,5 +10,10 @@ enum Page {
 }
 
 export class AppState {
+  @observable public currentPage = Page.SHOP;
+
+  @action public setCurrentPage(page: Page) {
+    this.currentPage = page;
+  }
 
 }

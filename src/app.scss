@@ -20,7 +20,6 @@ h2 {
 
 .body {
   width: 100vw;
-  height: 200wh;
 
   overflow-x: hidden;
   overflow-y: auto;
@@ -30,5 +29,30 @@ footer {
   height: 20vh;
   width: 100vw;
 
+  padding-left: 20%;
+  padding-right: 20%;
+
   border: 1px solid red;
+  background-color: $background-color-light;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer-nb-div {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: center;
+}
+
+a {
+  font-weight: normal;
+  color: $light-text;
+}
+
+a:hover {
+  text-decoration: underline;
 }
