@@ -3,6 +3,7 @@ import React from 'react';
 import { AppState } from './AppState';
 import { Header } from './Header';
 import './app.scss';
+import { HomePage } from './HomePage';
 
 
 @observer
@@ -10,18 +11,15 @@ export class App extends React.PureComponent {
   private readonly appState = new AppState();
   public render() {
     return (
-      <div className={'header-container'}>
+      <div>
         
+        <div className={'header-container'}>
         <Header/>
+        </div>
 
-        <body>
-          <div className={'image-banner'}>Image</div>
-          <div className={'brand-blurb'}>Blurb</div>
-          <div className={'new-arrivals'}>New Arrivals</div>
-          <div className={'brand-blurb'}>Blurb</div>
-          <div className={'image-banner'}>Image</div>
-
-        </body>
+        <div className={"body"}>
+          <HomePage />
+        </div>
 
         <footer>
           <div>Footer</div>

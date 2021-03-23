@@ -1,49 +1,30 @@
+@import './app-styles.scss';
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+h2 {
+  font-size: 3em;
+}
+
 .header-container {
   width: 100vw;
   height: 10vh;
 
-  border: 1px solid green;
+  //border: 1px solid green;
+  background-color: $background-color-light;
 }
 
-body {
+.body {
   width: 100vw;
   height: 200wh;
 
   overflow-x: hidden;
   overflow-y: auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
-
-.image-banner {
-  height: 65vh;
-  width: 70vw;
-
-  border: 1px solid red;
-}
-
-.brand-blurb {
-  height: 45vh;
-  width: 70vw;
-
-  border: 1px solid pink;
-}
-
-.new-arrivals {
-  height: 65vh;
-  width: 70vw;
-
-  border: 1px solid orange;
-}
-
 
 footer {
   height: 20vh;

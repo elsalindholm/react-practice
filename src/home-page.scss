@@ -1,0 +1,39 @@
+@import './app-styles.scss';
+
+.home-page-container {
+  height: 100%;
+  width: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-banner {
+  height: 65vh;
+  width: 70vw;
+
+  border: 1px solid red;
+  background-image: url('../src/Assets/SunsetBackground.jpg');
+  background-size: cover;
+}
+
+.brand-blurb {
+  height: 45vh;
+  width: 70vw;
+
+  padding: 50px 150px;
+  text-align: center;
+  color: $dark-text;
+
+  line-height: 25px;
+
+  border: 1px solid pink;
+}
+
+.new-arrivals {
+  height: 65vh;
+  width: 70vw;
+
+  border: 1px solid orange;
+}
