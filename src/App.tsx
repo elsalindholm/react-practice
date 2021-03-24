@@ -3,52 +3,48 @@ import React from 'react';
 import { AppState, Page } from './AppState';
 import { Header } from './Header';
 import './app.scss';
-import { HomePage } from './HomePage';
+import { HomePage } from './Main Pages/HomePage';
 import { isThisTypeNode } from 'typescript';
-import { AboutPage } from './AboutPage';
-import { ShopPage } from './ShopPage';
-import { GalleryPage } from './GalleryPage';
-import { SustainabilityPage } from './SustainabilityPage';
-
+import { AboutPage } from './Main Pages/AboutPage';
+import { ShopPage } from './Main Pages/ShopPage';
+import { GalleryPage } from './Main Pages/GalleryPage';
+import { SustainabilityPage } from './Main Pages/SustainabilityPage';
+import { SocialMedia } from './General Components/SocialMedia';
 
 @observer
 export class App extends React.PureComponent {
   private readonly appState = new AppState();
-  
-  public render() {
 
+  public render() {
     let page: JSX.Element;
-    switch(this.appState.currentPage) {
+    switch (this.appState.currentPage) {
       case Page.HOME:
         page = <HomePage />;
         break;
       case Page.SHOP:
-        page = <ShopPage />
+        page = <ShopPage />;
         break;
       case Page.GALLERY:
-        page = <GalleryPage />
+        page = <GalleryPage />;
         break;
       case Page.SUSTAINABILITY:
-        page = <SustainabilityPage />
+        page = <SustainabilityPage />;
         break;
       case Page.ABOUT:
         page = <AboutPage />;
         break;
       default:
-        page = <HomePage />
-      break;
+        page = <HomePage />;
+        break;
     }
 
     return (
       <div>
-        
         <div className={'header-container'}>
-        <Header appState={this.appState}/>
+          <Header appState={this.appState} />
         </div>
 
-        <div className={"body"}>
-          {page}
-        </div>
+        <div className={'body'}>{page}</div>
 
         <footer>
           <div className={'footer-nb-div'}>
@@ -68,7 +64,6 @@ export class App extends React.PureComponent {
             <p>Contact</p>
           </div>
         </footer>
-
       </div>
     );
   }

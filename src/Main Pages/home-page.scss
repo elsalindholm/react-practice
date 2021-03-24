@@ -1,4 +1,4 @@
-@import './app-styles.scss';
+@import '../app-styles.scss';
 
 .home-page-container {
   height: 100%;
@@ -14,7 +14,7 @@
   width: 70vw;
 
   border: 1px solid red;
-  background-image: url('../src/Assets/SunsetBackground.jpg');
+
   background-size: cover;
 }
 
